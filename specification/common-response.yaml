@@ -1,0 +1,9 @@
+properties:
+  status:
+    type: string
+    description: "응답 성공 여부.success:성공, fail:실패"
+    example: "success"
+  message:
+    type: string
+    description: "status가 success가 아닐때, 에러에 대한 설명이 포함됩니다."
+    example: "정상적인 응답입니다."

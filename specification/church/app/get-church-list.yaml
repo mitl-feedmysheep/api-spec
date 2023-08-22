@@ -1,0 +1,38 @@
+get:
+  tags:
+    - Church
+  summary: 등록된 교회 리스트
+  description: 등록된 교회 전체 리스트를 반환합니다.
+
+  parameters:
+    - $ref: "../../fms-token.yaml"
+
+  responses:
+    "200":
+      description: "성공"
+      content:
+        "application/json":
+          schema:
+            properties:
+              common:
+                $ref: "../../common-response.yaml"
+              data:
+                type: array
+                items:
+                  required:
+                    - churchId
+                    - churchName
+                    - churchLocation
+                  properties:
+                    churchId:
+                      type: number
+                      description: 교회 아이디
+                      example: 1
+                    churchName:
+                      type: string
+                      description: 교회 이름
+                      example: 번동제일교회
+                    churchLocation:
+                      type: string
+                      description: 교회 위치
+                      example: 서울특별시 강북구

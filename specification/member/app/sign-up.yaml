@@ -1,0 +1,59 @@
+post:
+  tags:
+    - Member
+  summary: 회원가입
+  description: 회원가입을 위한 정보를 받아 회원가입을 진행합니다.
+
+  requestBody:
+    description: 회원가입에 필요한 회원의 정보
+    required: true
+    content:
+      application/json:
+        schema:
+          required:
+            - memberName
+            - sex
+            - birthday
+            - phone
+            - email
+            - password
+            - address
+          properties:
+            memberName:
+              type: string
+              description: 유저 이름
+              example: 김창수
+            sex:
+              type: string
+              description: 유저 성별
+              example: M
+            birthday:
+              type: string
+              description: 유저 생년월일
+              example: 1991-09-16
+            phone:
+              type: string
+              description: 유저 휴대폰번호
+              example: 01088831954
+            email:
+              type: string
+              description: 유저 이메일
+              example: kcs19542001@gmail.com
+            password:
+              type: string
+              description: 유저 비밀번호
+              example: samplePassword
+            address:
+              type: string
+              description: 유저 주소
+              example: 서울특별시 강동구 진황도로61길 48 505호
+
+  responses:
+    "200":
+      description: "성공"
+      content:
+        "application/json":
+          schema:
+            properties:
+              common:
+                $ref: "../../common-response.yaml"

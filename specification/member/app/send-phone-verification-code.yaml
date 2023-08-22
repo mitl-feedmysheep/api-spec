@@ -1,0 +1,24 @@
+get:
+  tags:
+    - Member
+  summary: 휴대폰 중복여부 체크 및 본인인증 코드 전송
+  description: 등록된 휴대폰인지 여부 체크 및 본인인증을 위한 코드를 전송합니다.
+
+  parameters:
+    - in: query
+      name: phone
+      schema:
+        type: string
+      required: true
+      example: 01088831954
+      description: 중복여부를 체크할 휴대폰 번호입니다.
+
+  responses:
+    "200":
+      description: "성공"
+      content:
+        "application/json":
+          schema:
+            properties:
+              common:
+                $ref: "../../common-response.yaml"

@@ -1,0 +1,20 @@
+openapi: "3.0.2"
+info:
+  version: "1.0.0"
+  title: "FMS API SPEC"
+  description: "FeedMySheep 서비스에서 사용하는 API 명세서 입니다."
+servers:
+  - url: "http://localhost:3000"
+paths:
+  # Church
+  /app/church:
+    $ref: "./specification/church/app/get-church-list.yaml"
+#  # Member
+  /app/member/phone/send-verification-code:
+    $ref: "./specification/member/app/send-phone-verification-code.yaml"
+  /app/member/phone/check-verification-code:
+    $ref: "./specification/member/app/check-phone-verification-code.yaml"
+  /app/member/email/check-duplication:
+    $ref: "./specification/member/app/check-email-duplication.yaml"
+  /app/member/sign-up:
+    $ref: "./specification/member/app/sign-up.yaml"
