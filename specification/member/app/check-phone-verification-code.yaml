@@ -6,6 +6,13 @@ get:
 
   parameters:
     - in: query
+      name: phone
+      schema:
+        type: string
+      required: true
+      example: 01088831954
+      description: 본인확인 휴대폰번호
+    - in: query
       name: code
       schema:
         type: string
