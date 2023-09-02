@@ -10,7 +10,7 @@ get:
       schema:
         type: string
       required: true
-      example: 01088831954
+      example: "01088831954"
       description: 본인확인 휴대폰번호
     - in: query
       name: code
