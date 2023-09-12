@@ -9,7 +9,7 @@ paths:
   # Church
   /app/church:
     $ref: "./specification/church/app/get-church-list.yaml"
-#  # Member
+  # Member
   /app/member/phone/send-verification-code:
     $ref: "./specification/member/app/send-phone-verification-code.yaml"
   /app/member/phone/check-verification-code:
@@ -18,3 +18,5 @@ paths:
     $ref: "./specification/member/app/check-email-duplication.yaml"
   /app/member/sign-up:
     $ref: "./specification/member/app/sign-up.yaml"
+  /app/member/check-church-member:
+    $ref: "./specification/member/app/check-church-member.yaml"
