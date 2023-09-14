@@ -20,3 +20,5 @@ paths:
     $ref: "./specification/member/app/sign-up.yaml"
   /app/member/check-church-member:
     $ref: "./specification/member/app/check-church-member.yaml"
+  /app/member/sign-in:
+    $ref: "./specification/member/app/sign-in.yaml"

@@ -1,8 +1,11 @@
 post:
   tags:
     - Member
-  summary: 회원가입
-  description: 회원가입을 위한 정보를 받아 회원가입을 진행합니다.
+  summary: 로그인
+  description: 로그인을 진행합니다. 리프레시 토큰과 엑세스 토큰을 리턴합니다.
+
+  parameters:
+    - $ref: "../../fms-token.yaml"
 
   requestBody:
     description: 회원가입에 필요한 회원의 정보
@@ -11,30 +14,9 @@ post:
       application/json:
         schema:
           required:
-            - memberName
-            - sex
-            - birthday
-            - phone
             - email
             - password
-            - address
           properties:
-            memberName:
-              type: string
-              description: 유저 이름
-              example: 김창수
-            sex:
-              type: string
-              description: 유저 성별
-              example: M
-            birthday:
-              type: string
-              description: 유저 생년월일
-              example: "1991-09-16"
-            phone:
-              type: string
-              description: 유저 휴대폰번호
-              example: 01088831954
             email:
               type: string
               description: 유저 이메일
@@ -43,10 +25,6 @@ post:
               type: string
               description: 유저 비밀번호
               example: samplePassword
-            address:
-              type: string
-              description: 유저 주소
-              example: 서울특별시 강동구 진황도로61길 48 505호
 
   responses:
     "200":
@@ -59,9 +37,14 @@ post:
                 $ref: "../../common-response.yaml"
               data:
                 required:
+                  - refreshToken
                   - accessToken
                 properties:
-                  accessToken:
+                  refreshToken:
                     type: string
                     description: 리프레시 토큰
+                    example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+                  accessToken:
+                    type: string
+                    description: 엑세스 토큰
                     example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
