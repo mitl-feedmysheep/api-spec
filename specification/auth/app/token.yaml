@@ -1,0 +1,42 @@
+post:
+  tags:
+    - Auth
+  summary: 토큰 재발급
+  description: 리프레시 토큰을 통해 새로운 리프레시 토큰과 엑세스 토큰을 발급한다.
+
+  requestBody:
+    description: 토큰 재발급
+    required: true
+    content:
+      application/json:
+        schema:
+          required:
+            - refreshToken
+          properties:
+            refreshToken:
+              type: string
+              description: 리프레시 토큰
+              example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+
+  responses:
+    "200":
+      description: "성공"
+      content:
+        "application/json":
+          schema:
+            properties:
+              common:
+                $ref: "../../common-response.yaml"
+              data:
+                required:
+                  - refreshToken
+                  - accessToken
+                properties:
+                  refreshToken:
+                    type: string
+                    description: 리프레시 토큰
+                    example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+                  accessToken:
+                    type: string
+                    description: 엑세스 토큰
+                    example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
