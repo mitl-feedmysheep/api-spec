@@ -23,5 +23,5 @@ paths:
   /app/member/sign-in:
     $ref: "./specification/member/app/sign-in.yaml"
   # Auth
-  /app/token:
+  /app/auth/token:
     $ref: "./specification/auth/app/token.yaml"
