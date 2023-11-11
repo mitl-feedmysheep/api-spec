@@ -9,6 +9,8 @@ paths:
   # Church
   /app/church:
     $ref: "./specification/church/app/get-church-list.yaml"
+  /app/church/{churchId}/body:
+    $ref: "./specification/church/app/get-body-list-by-church-id.yaml"
   # Member
   /app/member/phone/send-verification-code:
     $ref: "./specification/member/app/send-phone-verification-code.yaml"

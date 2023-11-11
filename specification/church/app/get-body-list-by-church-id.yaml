@@ -1,0 +1,39 @@
+get:
+  tags:
+    - Church
+  summary: 등록된 바디 리스트
+  description: 교회에 속한 바디 리스트를 반환합니다.
+
+  parameters:
+    - $ref: "../../fms-token.yaml"
+    - in: path
+      name: churchId
+      schema:
+        type: integer
+      required: true
+      description: 교회 아이디
+
+  responses:
+    "200":
+      description: "성공"
+      content:
+        "application/json":
+          schema:
+            properties:
+              common:
+                $ref: "../../common-response.yaml"
+              data:
+                type: array
+                items:
+                  required:
+                    - bodyId
+                    - bodyName
+                  properties:
+                    bodyId:
+                      type: number
+                      description: 바디 아이디
+                      example: 1
+                    bodyName:
+                      type: string
+                      description: 바디 이름
+                      example: 청년부
