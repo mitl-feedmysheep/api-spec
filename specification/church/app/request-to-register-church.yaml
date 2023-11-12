@@ -1,0 +1,37 @@
+post:
+  tags:
+    - Church
+  summary: 교회 등록 요청
+  description: 교회 등록을 요청합니다. (등록요청시 비활성화된 상태로 요청됩니다.)
+
+  parameters:
+    - $ref: "../../fms-token.yaml"
+
+  requestBody:
+    description: 교회 등록 요청에 필요한 교회의 정보
+    required: true
+    content:
+      application/json:
+        schema:
+          required:
+            - churchName
+            - churchLocation
+          properties:
+            churchName:
+              type: string
+              description: 교회 이름
+              example: 번동제일교회
+            churchLocation:
+              type: string
+              description: 교회 위치
+              example: 서울특별시 강북구 덕릉로40다길 13
+
+  responses:
+    "200":
+      description: "성공"
+      content:
+        "application/json":
+          schema:
+            properties:
+              common:
+                $ref: "../../common-response.yaml"

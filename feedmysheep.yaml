@@ -11,6 +11,8 @@ paths:
     $ref: "./specification/church/app/get-church-list.yaml"
   /app/church/{churchId}/body:
     $ref: "./specification/church/app/get-body-list-by-church-id.yaml"
+  /app/church/register:
+    $ref: "./specification/church/app/request-to-register-church.yaml"
   # Member
   /app/member/phone/send-verification-code:
     $ref: "./specification/member/app/send-phone-verification-code.yaml"
