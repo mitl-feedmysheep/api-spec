@@ -6,6 +6,9 @@ info:
 servers:
   - url: "http://localhost:3000"
 paths:
+  # Init
+  /data-seeding:
+    $ref: "./specification/init/data-seeding.yaml"
   # Church
   /app/church:
     $ref: "./specification/church/app/get-church-list.yaml"

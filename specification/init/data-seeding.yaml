@@ -1,0 +1,15 @@
+post:
+  tags:
+    - Init
+  summary: 초기 데이터 셋팅
+  description: 필요한 데이터들을 셋팅합니다.
+
+  responses:
+    "200":
+      description: "성공"
+      content:
+        "application/json":
+          schema:
+            properties:
+              common:
+                $ref: "../common-response.yaml"
