@@ -21,10 +21,26 @@ post:
               type: string
               description: 교회 이름
               example: 번동제일교회
+            churchLogoUrl:
+              type: string
+              description: 교회 로고 URL
+              example: 'https://s3.feedmysheep.com'
             churchLocation:
               type: string
               description: 교회 위치
               example: 서울특별시 강북구 덕릉로40다길 13
+            churchNumber:
+              type: string
+              description: 교회 전화번호
+              example: 021111111
+            homepageUrl:
+              type: string
+              description: 홈페이지 주소
+              example: 'https://s3.feedmysheep.com'
+            churchDescription:
+              type: string
+              description: 교회 설명
+              example: 은혜 위에 은혜의 교회
 
   responses:
     "200":
