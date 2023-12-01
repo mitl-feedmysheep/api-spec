@@ -2,7 +2,29 @@ post:
   tags:
     - Init
   summary: 초기 데이터 셋팅
-  description: 필요한 데이터들을 셋팅합니다.
+  description: |
+    필요한 데이터들을 셋팅합니다. 
+
+    프로덕션 환경에서는 실행할 수 없습니다.
+
+  responses:
+    "200":
+      description: "성공"
+      content:
+        "application/json":
+          schema:
+            properties:
+              common:
+                $ref: "../common-response.yaml"
+
+delete:
+  tags:
+    - Init
+  summary: 초기 데이터 전체 삭제
+  description: |
+    모든 데이터를 truncate 합니다.
+
+    프로덕션 환경에서는 실행할 수 없습니다.
 
   responses:
     "200":

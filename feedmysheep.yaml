@@ -9,16 +9,16 @@ paths:
   # Init
   /data-seeding:
     $ref: "./specification/init/data-seeding.yaml"
-  # Church
+  # # Church
   /app/church:
     $ref: "./specification/church/app/church.yaml"
   /app/church/{churchId}/body:
     $ref: "./specification/church/app/church-churchid-body.yaml"
   /app/church/register:
     $ref: "./specification/church/app/church-register.yaml"
-  # Member
+  # # Member
   /app/member/phone/send-verification-code:
-    $ref: "./specification/member/app/member-phone-send-phone-verification-code.yaml"
+    $ref: "./specification/member/app/member-phone-send-verification-code.yaml"
   /app/member/phone/check-verification-code:
     $ref: "./specification/member/app/member-phone-check-verification-code.yaml"
   /app/member/email/check-duplication:
