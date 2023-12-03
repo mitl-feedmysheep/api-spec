@@ -29,6 +29,10 @@ paths:
     $ref: "./specification/member/app/member-check-church-member.yaml"
   /app/member/sign-in:
     $ref: "./specification/member/app/member-sign-in.yaml"
+  /app/member/churches-with-bodies:
+    $ref: "./specification/member/app/member-church-body.yaml"
+  # /app/member:
+  #   $ref: "./specification/member/app/member.yaml"
   # Auth
   /app/auth/token:
     $ref: "./specification/auth/app/auth-token.yaml"

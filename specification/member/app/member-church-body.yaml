@@ -1,0 +1,71 @@
+get:
+  tags:
+    - Member
+  summary: 유저에게 속한 교회리스트별 바디리스트
+  description: |
+    유저 한명은 여러 교회를 등록할 수 있다. 교회 하나는 여러개의 부서를 가질 수 있다. 
+
+    유저에게 등록된 여러개의 교회에서, 각 교회별로 유저에게 속한 부서를 리턴한다.
+
+  parameters:
+    - $ref: "../../fms-token.yaml"
+
+  responses:
+    "200":
+      description: "성공"
+      content:
+        "application/json":
+          schema:
+            properties:
+              common:
+                $ref: "../../common-response.yaml"
+              data:
+                required:
+                  - churchList
+                properties:
+                  churchList:
+                    type: array
+                    items:
+                      $ref: "#/definitions/ChurchWithBodies"
+                    example:
+                      [
+                        {
+                          churchId: 1,
+                          churchName: 번동제일교회,
+                          bodyList:
+                            [
+                              { bodyId: 1, bodyName: "청년부" },
+                              { bodyId: 2, bodyName: "신혼부부" },
+                            ],
+                        },
+                      ]
+
+definitions:
+  ChurchWithBodies:
+    required:
+      - churchId
+      - churchName
+      - bodyList
+    properties:
+      churchId:
+        type: integer
+        description: 교회 아이디
+      churchName:
+        type: string
+        description: 교회 이름
+      bodyList:
+        type: array
+        items:
+          $ref: "#/definitions/Body"
+
+  Body:
+    required:
+      - bodyId
+      - bodyName
+    properties:
+      bodyId:
+        type: integer
+        description: 바디 아이디
+      bodyName:
+        type: string
+        description: 바디 이름
