@@ -1,0 +1,67 @@
+get:
+  tags:
+    - Member
+  summary: 유저 정보 조회
+  description: 유저가 가진 정보를 조회합니다.
+
+  parameters:
+    - $ref: "../../fms-token.yaml"
+
+  responses:
+    "200":
+      description: "성공"
+      content:
+        "application/json":
+          schema:
+            properties:
+              common:
+                $ref: "../../common-response.yaml"
+              data:
+                required:
+                  - memberName
+                  - sex
+                  - birthday
+                  - phone
+                  - profileImageUrl
+                  - address
+                  - memberDescription
+                  - email
+                  - registeredAt
+                properties:
+                  memberName:
+                    type: string
+                    description: 유저이름
+                    example: 김창수
+                  sex:
+                    type: string
+                    description: 성별
+                    example: M
+                  birthday:
+                    type: string
+                    description: 생년월일
+                    example: "1991-09-16"
+                  phone:
+                    type: string
+                    description: 휴대폰번호
+                    example: "01088831954"
+                  profileImageUrl:
+                    type: string
+                    description: 프로필 이미지 주소
+                    example: "https://s3.aws.com/blahblah"
+                  address:
+                    type: string
+                    description: 주소
+                    example: 서울특별시 강동구 둔촌동 98-7 505호
+                  memberDescription:
+                    type: string
+                    description: 멤버 설명
+                    example: 하나님께 쓰임 받고 싶습니다.
+                  email:
+                    type: string
+                    description: 멤버 이메일
+                    example: kcs19542001@gmail.com
+                  registeredAt:
+                    type: date
+                    format: date-time
+                    description: 멤버 가입일시
+                    example: "2023-12-01T14:30:00Z"

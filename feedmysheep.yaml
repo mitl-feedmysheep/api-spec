@@ -10,10 +10,10 @@ paths:
   /data-seeding:
     $ref: "./specification/init/data-seeding.yaml"
   # # Church
-  /app/church:
-    $ref: "./specification/church/app/church.yaml"
-  /app/church/{churchId}/body:
-    $ref: "./specification/church/app/church-churchid-body.yaml"
+  /app/churches:
+    $ref: "./specification/church/app/churches.yaml"
+  /app/church/{churchId}/bodies:
+    $ref: "./specification/church/app/church-churchid-bodies.yaml"
   /app/church/register:
     $ref: "./specification/church/app/church-register.yaml"
   # # Member
@@ -30,9 +30,17 @@ paths:
   /app/member/sign-in:
     $ref: "./specification/member/app/member-sign-in.yaml"
   /app/member/churches-with-bodies:
-    $ref: "./specification/member/app/member-church-body.yaml"
-  # /app/member:
-  #   $ref: "./specification/member/app/member.yaml"
+    $ref: "./specification/member/app/member-churches-with-bodies.yaml"
+  /app/member/info:
+    $ref: "./specification/member/app/member.yaml"
+  # /app/member/media:
+  #   $ref: "./specification/member/app/""
+
+  # TODO도 넣어야 함
+
   # Auth
   /app/auth/token:
     $ref: "./specification/auth/app/auth-token.yaml"
+  # Media
+  /app/medias:
+    $ref: "./specification/media/app/medias.yaml"

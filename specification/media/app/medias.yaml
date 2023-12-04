@@ -1,0 +1,45 @@
+get:
+  tags:
+    - Media
+  summary: 미디어 리스트를 가져옵니다
+  description: |
+    **screenKey에** 맞는 미디어 리스트를 가져옵니다.
+      - 관리자가 올린 미디어 리스트를 가져옵니다.
+
+  parameters:
+    - in: query
+      name: screenKey
+      schema:
+        type: string
+      required: true
+      example: home-on-top-of-cell-list
+      description: 스크린 키
+
+  responses:
+    "200":
+      description: "성공"
+      content:
+        "application/json":
+          schema:
+            properties:
+              common:
+                $ref: "../../common-response.yaml"
+              data:
+                type: array
+                items:
+                  $ref: "#/definitions/Media"
+                example:
+                  [
+                    { mediaUrl: "https://s3.aws.com/1" },
+                    { mediaUrl: "https://s3.aws.com/2" },
+                  ]
+
+definitions:
+  Media:
+    required:
+      - mediaUrl
+    properties:
+      mediaUrl:
+        type: string
+        example: "https://s3.aws.com/blahblah"
+        description: 미디어 URL
