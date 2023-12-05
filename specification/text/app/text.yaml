@@ -1,0 +1,27 @@
+get:
+  tags:
+    - Text
+  summary: 텍스트 조회
+  description: |
+    스크린 키에 해당하는 텍스트를 가져옵니다.
+
+  parameters:
+    - $ref: "../../fms-token.yaml"
+
+  responses:
+    "200":
+      description: "성공"
+      content:
+        "application/json":
+          schema:
+            properties:
+              common:
+                $ref: "../../common-response.yaml"
+              data:
+                required:
+                  - text
+                properties:
+                  text:
+                    type: string
+                    example: "님, 안녕하세요!\n오늘은 어떤 하나님을 만나셨나요?"
+                    description: 텍스트

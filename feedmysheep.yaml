@@ -4,19 +4,21 @@ info:
   title: "FMS API SPEC"
   description: "FeedMySheep 서비스에서 사용하는 API 명세서 입니다."
 servers:
-  - url: "http://localhost:3000"
+  - url: "http://localhost:8080"
 paths:
-  # Init
-  /data-seeding:
-    $ref: "./specification/init/data-seeding.yaml"
-  # # Church
+  # Auth
+  /app/auth/token:
+    $ref: "./specification/auth/app/auth-token.yaml"
+
+  # Church
   /app/churches:
     $ref: "./specification/church/app/churches.yaml"
   /app/church/{churchId}/bodies:
     $ref: "./specification/church/app/church-churchid-bodies.yaml"
   /app/church/register:
     $ref: "./specification/church/app/church-register.yaml"
-  # # Member
+
+  # Member
   /app/member/phone/send-verification-code:
     $ref: "./specification/member/app/member-phone-send-verification-code.yaml"
   /app/member/phone/check-verification-code:
@@ -33,14 +35,21 @@ paths:
     $ref: "./specification/member/app/member-churches-with-bodies.yaml"
   /app/member/info:
     $ref: "./specification/member/app/member.yaml"
-  # /app/member/media:
-  #   $ref: "./specification/member/app/""
+  /app/member/body/{bodyId}/cells:
+    $ref: "./specification/member/app/member-body-bodyid-cells.yaml"
 
-  # TODO도 넣어야 함
+  # WORD
+  /app/word:
+    $ref: "./specification/word/app/word.yaml"
 
-  # Auth
-  /app/auth/token:
-    $ref: "./specification/auth/app/auth-token.yaml"
   # Media
   /app/medias:
     $ref: "./specification/media/app/medias.yaml"
+
+  # Text
+  /app/text:
+    $ref: "./specification/text/app/text.yaml"
+
+  # Init
+  /data-seeding:
+    $ref: "./specification/init/data-seeding.yaml"

@@ -1,0 +1,33 @@
+get:
+  tags:
+    - Word
+  summary: 말씀 조회
+  description: |
+    스크린 키에 해당하는 여러개의 말씀을 가져와, 랜덤으로 하나를 노출시킵니다.
+
+  parameters:
+    - in: query
+      name: screenKey
+      schema:
+        type: string
+      required: true
+      example: splash-screen
+      description: 스크린 키
+
+  responses:
+    "200":
+      description: "성공"
+      content:
+        "application/json":
+          schema:
+            properties:
+              common:
+                $ref: "../../common-response.yaml"
+              data:
+                required:
+                  - words
+                properties:
+                  words:
+                    type: string
+                    example: 항상 기뻐하십시오. (데살로니가전서 5:16)
+                    description: 말씀

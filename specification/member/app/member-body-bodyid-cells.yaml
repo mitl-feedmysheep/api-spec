@@ -1,0 +1,66 @@
+get:
+  tags:
+    - Member
+  summary: 해당 바디의 모든 셀 리스트 조회
+  description: |
+    전달된 bodyId와 토큰의 memberId를 가지고, 활성화된 모든 셀리스트를 가져옵니다.
+
+    예) 번동제일교회(church) > **청년부(body)** > 양육팀, 찬양팀(organ) > **창수셀, 쉐카이나(cell)**
+
+  parameters:
+    - $ref: "../../fms-token.yaml"
+    - in: path
+      name: bodyId
+      schema:
+        type: integer
+      required: true
+      description: 바디 아이디
+
+  responses:
+    "200":
+      description: "성공"
+      content:
+        "application/json":
+          schema:
+            properties:
+              common:
+                $ref: "../../common-response.yaml"
+              data:
+                type: array
+                items:
+                  $ref: "#/definitions/Cell"
+
+definitions:
+  Cell:
+    required:
+      - cellMemberCount
+      - cellId
+      - cellName
+      - cellLogoUrl
+      - cellPlace
+      - description
+    properties:
+      cellMemberCount:
+        type: number
+        example: 12
+        description: 셀에 속한 유효한 멤버 카운트
+      cellId:
+        type: number
+        example: 8
+        description: 셀 아이디
+      cellName:
+        type: string
+        example: 창수셀
+        description: 셀 이름
+      cellLogoUrl:
+        type: string
+        example: "https://s3.aws.com/창수셀"
+        description: 셀 로고 URL
+      cellPlace:
+        type: string
+        example: 헤븐 홀
+        description: 셀 모임 일반적인 장소
+      description:
+        type: string
+        example: 김창수 리더가 이끄는 셀
+        description: 셀 설명
