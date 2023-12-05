@@ -1,0 +1,101 @@
+get:
+  tags:
+    - Church
+  summary: 바디에 속한 멤버 이벤트 조회
+  description: |
+    바디아래에 속한 모든 멤버들 중, 쿼리로 전달되는 해당 날짜에 속하는 멤버들의 이벤트를 조회한다.
+
+    예) 바디(청년부)에 속한 멤버들 중, 2023년 12월에 특정 이벤트(생일 등)를 가지고 있는 멤버들을 offset, limit에 따라 조회한다.
+
+    **날짜별로 DESC 정렬됩니다.**
+
+  parameters:
+    - $ref: "../../fms-token.yaml"
+    - in: query
+      name: year
+      schema:
+        type: string
+      required: true
+      example: "2023"
+      description: 연도 (문자열)
+    - in: query
+      name: month
+      schema:
+        type: string
+      required: true
+      example: "07"
+      description: 월 (문자열)
+    - in: query
+      name: offset
+      schema:
+        type: number
+      required: true
+      example: 0
+      description: 시작위치
+    - in: query
+      name: limit
+      schema:
+        type: int
+      required: true
+      example: 20
+      description: 개수
+
+  responses:
+    "200":
+      description: "성공"
+      content:
+        "application/json":
+          schema:
+            properties:
+              common:
+                $ref: "../../common-response.yaml"
+              data:
+                properties:
+                  totalMemberEventCount:
+                    type: number
+                    example: 23
+                    description: 전체 멤버 이벤트 개수
+                  memberEventList:
+                    type: array
+                    items:
+                      $ref: "#/definitions/MemberEvent"
+
+definitions:
+  MemberEvent:
+    required:
+      - memberId
+      - memberName
+      - sex
+      - birthday
+      - phone
+      - profileImageUrl
+      - eventName
+    properties:
+      memberId:
+        type: number
+        example: 5
+        description: 멤버 아이디
+      memberName:
+        type: string
+        example: 김창수
+        description: 멤버 이름
+      sex:
+        type: string
+        example: M
+        description: 성별
+      birthday:
+        type: string
+        example: "1991-09-16"
+        description: 생년월일
+      phone:
+        type: string
+        example: "010-8883-1954"
+        description: 휴대폰 번호
+      profileImageUrl:
+        type: string
+        example: "https://s3.aws.com/김창수"
+        description: 멤버 프로필 이미지 URL
+      eventName:
+        type: string
+        example: birthday
+        description: [birthday, military, study-abroad]
