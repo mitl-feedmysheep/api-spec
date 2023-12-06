@@ -20,25 +20,21 @@ get:
               common:
                 $ref: "../../common-response.yaml"
               data:
-                required:
-                  - churchList
-                properties:
-                  churchList:
-                    type: array
-                    items:
-                      $ref: "#/definitions/ChurchWithBodies"
-                    example:
-                      [
-                        {
-                          churchId: 1,
-                          churchName: 번동제일교회,
-                          bodyList:
-                            [
-                              { bodyId: 1, bodyName: "청년부" },
-                              { bodyId: 2, bodyName: "신혼부부" },
-                            ],
-                        },
-                      ]
+                type: array
+                items:
+                  $ref: "#/definitions/ChurchWithBodies"
+                example:
+                  [
+                    {
+                      churchId: 1,
+                      churchName: 번동제일교회,
+                      bodyList:
+                        [
+                          { bodyId: 1, bodyName: "청년부" },
+                          { bodyId: 2, bodyName: "신혼부부" },
+                        ],
+                    },
+                  ]
 
 definitions:
   ChurchWithBodies:
