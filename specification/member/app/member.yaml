@@ -48,6 +48,7 @@ get:
                     type: string
                     description: 프로필 이미지 주소
                     example: "https://s3.aws.com/blahblah"
+                    nullable: true
                   address:
                     type: string
                     description: 주소
@@ -56,6 +57,7 @@ get:
                     type: string
                     description: 멤버 설명
                     example: 하나님께 쓰임 받고 싶습니다.
+                    nullable: true
                   email:
                     type: string
                     description: 멤버 이메일
