@@ -67,6 +67,7 @@ definitions:
       - memberName
       - sex
       - birthday
+      - dayOfWeek
       - phone
       - profileImageUrl
       - eventName
@@ -87,6 +88,10 @@ definitions:
         type: string
         example: "1991-09-16"
         description: 생년월일
+      dayOfWeek:
+        type: string
+        example: 월요일
+        description: 해당연도 요일
       phone:
         type: string
         example: "010-8883-1954"
