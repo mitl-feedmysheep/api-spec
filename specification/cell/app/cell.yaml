@@ -1,9 +1,9 @@
 get:
   tags:
     - Cell
-  summary: 셀 정보 조회
+  summary: 소모임 정보 조회
   description: |
-    셀에 대한 기본 정보를 제공합니다.
+    소모임에 대한 기본 정보를 제공합니다.
 
   parameters:
     - $ref: "../../fms-token.yaml"

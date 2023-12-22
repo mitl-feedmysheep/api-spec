@@ -1,0 +1,38 @@
+get:
+  tags:
+    - Cell
+  summary: 해당 소모임의 총 모임 횟수 및 기도제목 수 조회
+  description: |
+    해당 소모임이 유효한 기간동안(startDate to endDate) 가졌던 모임의 횟수와 나누었던 기도제목의 총 횟수를 반환합니다.
+
+  parameters:
+    - $ref: "../../fms-token.yaml"
+    - in: path
+      name: cellId
+      schema:
+        type: integer
+      required: true
+      description: 셀 아이디
+
+  responses:
+    "200":
+      description: "성공"
+      content:
+        "application/json":
+          schema:
+            properties:
+              common:
+                $ref: "../../common-response.yaml"
+              data:
+                required:
+                  - totalGatheringCount
+                  - totalPrayerRequestCount
+                properties:
+                  totalGatheringCount:
+                    type: number
+                    example: 12
+                    description: 총 모임 횟수
+                  totalPrayerRequestCount:
+                    type: number
+                    example: 104
+                    description: 총 기도제목 개수
