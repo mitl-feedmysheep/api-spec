@@ -40,6 +40,12 @@ paths:
   /app/member/body/{bodyId}/cells:
     $ref: "./specification/member/app/member-body-bodyid-cells.yaml"
 
+  # Cell
+  /app/cell/{cellId}/info:
+    $ref: "./specification/cell/app/cell.yaml"
+  /app/cell/{cellId}/members:
+    $ref: "./specification/cell/app/members-by-cellid.yaml"
+
   # WORD
   /app/word:
     $ref: "./specification/word/app/word.yaml"

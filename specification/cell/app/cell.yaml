@@ -1,0 +1,63 @@
+get:
+  tags:
+    - Cell
+  summary: 셀 정보 조회
+  description: |
+    셀에 대한 기본 정보를 제공합니다.
+
+  parameters:
+    - $ref: "../../fms-token.yaml"
+    - in: path
+      name: cellId
+      schema:
+        type: integer
+      required: true
+      description: 셀 아이디
+
+  responses:
+    "200":
+      description: "성공"
+      content:
+        "application/json":
+          schema:
+            properties:
+              common:
+                $ref: "../../common-response.yaml"
+              data:
+                required:
+                  - cellId
+                  - cellName
+                  - cellLogoUrl
+                  - cellPlace
+                  - description
+                  - startDate
+                  - endDate
+                properties:
+                  cellId:
+                    type: number
+                    example: 5
+                    description: 셀 아이디
+                  cellName:
+                    type: string
+                    example: 창수셀
+                    description: 셀 이름
+                  cellLogoUrl:
+                    type: string
+                    example: "https://s3.feedmysheep.com"
+                    description: 셀 로고 URL
+                  cellPlace:
+                    type: string
+                    example: 헤븐 무대 앞
+                    description: 셀 모임 장소 (일반적인)
+                  description:
+                    type: string
+                    example: "창수셀은.."
+                    description: 셀 설명
+                  startDate:
+                    type: string
+                    example: "2023-01-01"
+                    description: 셀 시작날짜
+                  endDate:
+                    type: string
+                    example: "2023-12-31"
+                    description: 셀 종료날짜

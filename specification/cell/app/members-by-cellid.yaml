@@ -1,0 +1,109 @@
+get:
+  tags:
+    - Cell
+  summary: 셀에 속한 멤버 리스트 조회
+  description: |
+    셀에 속한 활성화된 멤버 리스트를 반환합니다. 
+
+    (추가로 해당 달에 생일인 멤버들을 최우선으로, 정렬하여 보여줍니다.)
+
+    1. 셀리더
+    2. 생일대상 셀원
+    3. 나머지 셀원 ㄱㄴㄷㄹ
+
+  parameters:
+    - $ref: "../../fms-token.yaml"
+    - in: path
+      name: cellId
+      schema:
+        type: integer
+      required: true
+      description: 셀 아이디
+
+  responses:
+    "200":
+      description: "성공"
+      content:
+        "application/json":
+          schema:
+            properties:
+              common:
+                $ref: "../../common-response.yaml"
+              data:
+                required:
+                  - totalCount
+                  - totalMaleCount
+                  - totalFemaleCount
+                  - cellMemberList
+                properties:
+                  totalCount:
+                    type: number
+                    example: 10
+                    description: 전체 셀멤버 수
+                  totalMaleCount:
+                    type: number
+                    example: 5
+                    description: 전체 남자 셀멤버 수
+                  totalFemaleCount:
+                    type: number
+                    example: 5
+                    description: 전체 여자 셀멤버 수
+                  cellMemberList:
+                    type: array
+                    items:
+                      $ref: "#/definitions/CellMember"
+
+definitions:
+  CellMember:
+    required:
+      - memberId
+      - isLeader
+      - memberName
+      - sex
+      - isBirthdayThisMonth
+      - birthday
+      - phone
+      - profileImageUrl
+      - email
+      - memberDescription
+    properties:
+      memberId:
+        type: number
+        description: 멤버 아이디
+        example: 5
+      isLeader:
+        type: boolean
+        description: 리더 여부
+        example: true
+      memberName:
+        type: string
+        description: 멤버 이름
+        example: 김창수
+      sex:
+        type: string
+        description: 성별
+        example: M
+      isBirthdayThisMonth:
+        type: boolean
+        description: 이번 달 생일여부
+        example: false
+      birthday:
+        type: string
+        description: 생일
+        example: "1991-09-16"
+      phone:
+        type: string
+        description:
+        example:
+      profileImageUrl:
+        type: string
+        description:
+        example:
+      email:
+        type: string
+        description:
+        example:
+      memberDescription:
+        type: string
+        description:
+        example:
