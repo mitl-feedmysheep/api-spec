@@ -49,6 +49,8 @@ paths:
     $ref: "./specification/cell/app/gatherings-and-prayers-count.yaml"
   /app/cell/{cellId}/cell-gatherings:
     $ref: "./specification/cell/app/cell-gatherings.yaml"
+  /app/cell/{cellId}/cell-gathering/{cellGatheringId}:
+    $ref: "./specification/cell/app/cell-gathering.yaml"
 
   # WORD
   /app/word:
