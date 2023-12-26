@@ -1,0 +1,47 @@
+put:
+  tags:
+    - Cell
+  summary: 소모임 멤버별 기도제목 수정
+  description: |
+    기도제목을 수정할 수 있습니다.
+
+  parameters:
+    - $ref: "../../fms-token.yaml"
+    - in: path
+      name: cellGatheringMemberPrayerId
+      schema:
+        type: integer
+      required: true
+      description: 소모임 멤버 기도제목 아이디
+
+  requestBody:
+    description: 소모임 멤버별 기도제목 수정
+    required: true
+    content:
+      application/json:
+        schema:
+          type: array
+          items:
+            $ref: "#/definitions/PrayerRequest"
+
+  responses:
+    "200":
+      description: "성공"
+      content:
+        "application/json":
+          schema:
+            properties:
+              common:
+                $ref: "../../common-response.yaml"
+
+definitions:
+  PrayerRequest:
+    properties:
+      cellGatheringMemberPrayerId:
+        type: number
+        example: 873
+        description: 소모임 멤버 기도제목 아이디
+      prayerRequest:
+        type: string
+        example: 탄자니아 선교에 대한 마음을 위해서 기도해주세요
+        description: 기도제목

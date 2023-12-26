@@ -8,12 +8,6 @@ get:
   parameters:
     - $ref: "../../fms-token.yaml"
     - in: path
-      name: cellId
-      schema:
-        type: integer
-      required: true
-      description: 셀 아이디
-    - in: path
       name: cellGatheringId
       schema:
         type: integer
@@ -52,12 +46,6 @@ put:
 
   parameters:
     - $ref: "../../fms-token.yaml"
-    - in: path
-      name: cellId
-      schema:
-        type: integer
-      required: true
-      description: 셀 아이디
     - in: path
       name: cellGatheringId
       schema:
@@ -128,12 +116,6 @@ delete:
 
   parameters:
     - $ref: "../../fms-token.yaml"
-    - in: path
-      name: cellId
-      schema:
-        type: integer
-      required: true
-      description: 셀 아이디
     - in: path
       name: cellGatheringId
       schema:
