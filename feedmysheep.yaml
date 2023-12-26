@@ -49,8 +49,12 @@ paths:
     $ref: "./specification/cell/app/gatherings-and-prayers-count.yaml"
   /app/cell/{cellId}/cell-gatherings:
     $ref: "./specification/cell/app/cell-gatherings.yaml"
-  /app/cell/{cellId}/cell-gathering/{cellGatheringId}:
+  /app/cell/{cellId}/cell-gathering:
     $ref: "./specification/cell/app/cell-gathering.yaml"
+  /app/cell/{cellId}/cell-gathering/{cellGatheringId}:
+    $ref: "./specification/cell/app/cell-gathering-by-cellgatheringid.yaml"
+  /app/cell/{cellId}/cell-gathering/{cellGatheringId}/cell-gathering-member/{cellGatheringMemberId}:
+    $ref: "./specification/cell/app/cell-gathering-member-and-prayer-request.yaml"
 
   # WORD
   /app/word:
