@@ -1,0 +1,49 @@
+put:
+  tags:
+    - Cell
+  summary: 소모임 멤버별 예배참석, 모임참석 수정
+  description: |
+    default(=false)로 등록된 예배참석여부와 모임참석여부, 삶 나눔을 업데이트합니다.
+    수정할 사항이 있는 것만 업데이트 합니다. (optional)
+
+  parameters:
+    - $ref: "../../fms-token.yaml"
+    - in: path
+      name: cellGatheringMemberId
+      schema:
+        type: integer
+      required: true
+      description: 소모임 멤버 아이디
+
+  requestBody:
+    description: 소모임 멤버별 기도제목 수정
+    required: true
+    content:
+      application/json:
+        schema:
+          properties:
+            worshipAttendance:
+              type: boolean
+              examples: true
+              description: 소모임 멤버 예배 참석 여부 (0 혹은 1)
+              required: false
+            cellGatheringAttendance:
+              type: boolean
+              example: true
+              description: 소모임 멤버 소모임 참석 여부 (0 혹은 1)
+              required: false
+            story:
+              type: string
+              example: 지난 주에 시험을 쳤는데, 망쳐서 기분이 안 좋았지만 되려 감사하다는 생각이 들었어요
+              description: 소모임 멤버 삶 나눔
+              required: false
+
+  responses:
+    "200":
+      description: "성공"
+      content:
+        "application/json":
+          schema:
+            properties:
+              common:
+                $ref: "../../common-response.yaml"

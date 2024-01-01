@@ -54,7 +54,9 @@ paths:
   /app/cell/cell-gathering/{cellGatheringId}:
     $ref: "./specification/cell/app/cell-gathering-by-cellgatheringid.yaml"
   /app/cell/cell-gathering/cell-gathering-member/{cellGatheringMemberId}:
-    $ref: "./specification/cell/app/cell-gathering-member-and-prayer-request.yaml"
+    $ref: "./specification/cell/app/cell-gathering-member.yaml"
+  /app/cell/cell-gathering/cell-gathering-member/{cellGatheringMemberId}/cell-gathering-member-prayer:
+    $ref: "./specification/cell/app/cell-gathering-member-prayer.yaml"
   /app/cell/cell-gathering/cell-gathering-member/cell-gathering-member-prayer/{cellGatheringMemberPrayerId}:
     $ref: "./specification/cell/app/prayer-request-by-cellprayerrequestid.yaml"
 
