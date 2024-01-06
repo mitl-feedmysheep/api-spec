@@ -12,13 +12,6 @@ get:
   parameters:
     - $ref: "../../fms-token.yaml"
     - in: query
-      name: year
-      schema:
-        type: string
-      required: true
-      example: "2023"
-      description: 연도 (문자열)
-    - in: query
       name: month
       schema:
         type: string

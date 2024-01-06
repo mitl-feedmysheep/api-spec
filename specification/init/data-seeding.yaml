@@ -1,4 +1,5 @@
 post:
+  deprecated: true
   tags:
     - Init
   summary: 초기 데이터 셋팅
@@ -18,6 +19,7 @@ post:
                 $ref: "../common-response.yaml"
 
 delete:
+  deprecated: true
   tags:
     - Init
   summary: 초기 데이터 전체 삭제
