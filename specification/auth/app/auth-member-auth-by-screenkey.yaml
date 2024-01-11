@@ -1,0 +1,33 @@
+get:
+  tags:
+    - Auth
+  summary: 스크린에 해당하는 유저 권한 조회
+  description: 토큰으로 유저의 권한을 조회합니다.
+
+  parameters:
+    - $ref: "../../fms-token.yaml"
+    - in: query
+      name: screenKey
+      schema:
+        type: string
+      required: true
+      example: cell-gathering
+      description: 스크린 키
+
+  responses:
+    "200":
+      description: "성공"
+      content:
+        "application/json":
+          schema:
+            properties:
+              common:
+                $ref: "../../common-response.yaml"
+              data:
+                required:
+                  - isAccessible
+                properties:
+                  isAccessible:
+                    type: boolean
+                    description: 유저 권한 여부
+                    example: true

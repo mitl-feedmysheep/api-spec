@@ -9,6 +9,8 @@ paths:
   # Auth
   /app/auth/token:
     $ref: "./specification/auth/app/auth-token.yaml"
+  /app/auth/member:
+    $ref: "./specification/auth/app/auth-member-auth-by-screenkey.yaml"
 
   # Church
   /app/churches:
