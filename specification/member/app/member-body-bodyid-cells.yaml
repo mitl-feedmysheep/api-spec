@@ -7,6 +7,14 @@ get:
 
     예) 번동제일교회(church) > **청년부(body)** > 양육팀, 찬양팀(organ) > **창수셀, 쉐카이나(cell)**
 
+    2가지의 경우가 존재합니다.
+    1. churchLeader OR bodyLeader
+    2. organLeader OR cellLeader OR member
+
+    1번) body 아래의 모든 셀을 볼 수 있다.
+
+    2번) organLeader면 본인이 leader인 셀을 모두 볼 수 있으며, 본인이 속한 셀을 볼 수 있다. / cellLeader 혹은 member일 경우 본인이 속한 셀을 볼 수 있다.
+
   parameters:
     - $ref: "../../fms-token.yaml"
     - in: path
