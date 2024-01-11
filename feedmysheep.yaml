@@ -39,6 +39,8 @@ paths:
     $ref: "./specification/member/app/member.yaml"
   /app/member/body/{bodyId}/cells:
     $ref: "./specification/member/app/member-body-bodyid-cells.yaml"
+  /app/member/church/{churchId}/body/{bodyId}:
+    $ref: "./specification/member/app/member-church-body-member-map.yaml"
 
   # Cell
   /app/cell/{cellId}/info:

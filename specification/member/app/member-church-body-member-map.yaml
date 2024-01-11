@@ -1,0 +1,30 @@
+post:
+  tags:
+    - Member
+  summary: 멤버 교회 및 바디 등록 요청
+  description: 교회 및 교회에 등록된 바디에 멤버를 등록 요청합니다.
+
+  parameters:
+    - $ref: "../../fms-token.yaml"
+    - in: path
+      name: churchId
+      schema:
+        type: integer
+      required: true
+      description: 교회 아이디
+    - in: path
+      name: bodyId
+      schema:
+        type: integer
+      required: true
+      description: 바디 아이디
+
+  responses:
+    "200":
+      description: "성공"
+      content:
+        "application/json":
+          schema:
+            properties:
+              common:
+                $ref: "../../common-response.yaml"
