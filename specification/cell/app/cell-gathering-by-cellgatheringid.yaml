@@ -30,10 +30,6 @@ get:
                 properties:
                   cellGathering:
                     $ref: "#/definitions/CellGathering"
-                  cellGatheringMemberList:
-                    type: array
-                    items:
-                      $ref: "#/definitions/CellGatheringMember"
 
 put:
   tags:
@@ -144,6 +140,7 @@ definitions:
       - gatheringPlace
       - gatheringPhotoUrl
       - description
+      - cellGatheringMemberList
     properties:
       cellGatheringId:
         type: number
@@ -177,6 +174,10 @@ definitions:
         type: string
         example: 특별한 일은 없었어요.
         description: 모임 특이사항
+      cellGatheringMemberList:
+        type: array
+        items:
+          $ref: "#/definitions/CellGatheringMember"
   CellGatheringMember:
     required:
       - cellGatheringMemberId
@@ -239,6 +240,7 @@ definitions:
     required:
       - cellGatheringMemberPrayerId
       - prayerRequest
+      - isAnswered
     properties:
       cellGatheringMemberPrayerId:
         type: number
@@ -248,3 +250,7 @@ definitions:
         type: string
         example: 하나님의 시선을 가지게 해주세요.
         description: 기도제목
+      isAnswered:
+        type: boolean
+        example: true
+        description: 기도제목 응답 여부
