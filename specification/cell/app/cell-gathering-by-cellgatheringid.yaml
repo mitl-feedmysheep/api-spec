@@ -24,12 +24,7 @@ get:
               common:
                 $ref: "../../common-response.yaml"
               data:
-                required:
-                  - cellGathering
-                  - cellGatheringMemberList
-                properties:
-                  cellGathering:
-                    $ref: "#/definitions/CellGathering"
+                $ref: "#/definitions/CellGathering"
 
 put:
   tags:
