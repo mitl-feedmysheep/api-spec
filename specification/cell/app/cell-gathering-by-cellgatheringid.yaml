@@ -177,7 +177,7 @@ definitions:
     required:
       - cellGatheringMemberId
       - cellGatheringId
-      - cellMemberId
+      - cellMemberMapId
       - isLeader
       - memberName
       - birthday
@@ -195,7 +195,7 @@ definitions:
         type: number
         example: 13
         description: 셀모임 아이디
-      cellMemberId:
+      cellMemberMapId:
         type: number
         example: 183
         description: 셀멤버 아이디
