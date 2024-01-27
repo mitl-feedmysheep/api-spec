@@ -32,13 +32,10 @@ post:
     content:
       application/json:
         schema:
-          required:
-            - prayerRequestList
-          properties:
-            prayerRequestList:
-              type: array
-              items:
-                $ref: "#/definitions/PrayerRequest"
+          type: array
+          items:
+            type: string
+            example: "삶이 너무 허무해요. 하나님의 사랑을 느끼고 싶어요."
 
   responses:
     "200":
@@ -49,11 +46,3 @@ post:
             properties:
               common:
                 $ref: "../../common-response.yaml"
-
-definitions:
-  PrayerRequest:
-    properties:
-      prayerRequest:
-        type: string
-        example: 탄자니아 선교에 대한 마음을 위해서 기도해주세요
-        description: 기도제목
