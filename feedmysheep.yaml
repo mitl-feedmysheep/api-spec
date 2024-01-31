@@ -43,6 +43,14 @@ paths:
     $ref: "./specification/member/app/member-body-bodyid-cells.yaml"
   /app/member/church/{churchId}/body/{bodyId}:
     $ref: "./specification/member/app/member-church-body-member-map.yaml"
+  /app/member/find-email:
+    $ref: "./specification/member/app/member-find-email.yaml"
+  /app/member/request-temporary-password:
+    $ref: "./specification/member/app/member-request-temporary-password.yaml"
+  /app/member/change-password:
+    $ref: "./specification/member/app/member-change-password.yaml"
+  /app/member/deactivate:
+    $ref: "./specification/member/app/member-deactivate.yaml"
 
   # Cell
   /app/cell/{cellId}/info:
@@ -61,7 +69,7 @@ paths:
     $ref: "./specification/cell/app/cell-gathering-member.yaml"
   /app/cell/cell-gathering/cell-gathering-member/{cellGatheringMemberId}/cell-gathering-member-prayer:
     $ref: "./specification/cell/app/cell-gathering-member-prayer.yaml"
-  /app/cell/cell-gathering/cell-gathering-member/cell-gathering-member-prayer/{cellGatheringMemberPrayerId}:
+  /app/cell/cell-gathering/cell-gathering-member/cell-gathering-member-prayer:
     $ref: "./specification/cell/app/prayer-request-by-cellprayerrequestid.yaml"
 
   # WORD

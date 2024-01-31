@@ -1,0 +1,36 @@
+post:
+  tags:
+    - Member
+  summary: 이메일 찾기
+  description: |
+    이름과 생년월일로 이메일을 찾습니다.
+
+  requestBody:
+    content:
+      "application/json":
+        schema:
+          properties:
+            name:
+              type: string
+              example: "김창수"
+              description: 이름
+            birthday:
+              type: string
+              example: "1991-09-16"
+              description: 생년월일
+
+  responses:
+    "200":
+      description: "성공"
+      content:
+        "application/json":
+          schema:
+            properties:
+              common:
+                $ref: "../../common-response.yaml"
+              data:
+                properties:
+                  email:
+                    type: string
+                    example: "kcs19542001@gmail.com"
+                    description: 유저 이메일

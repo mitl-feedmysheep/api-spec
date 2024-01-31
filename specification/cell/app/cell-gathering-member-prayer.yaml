@@ -1,3 +1,32 @@
+get:
+  tags:
+    - Cell
+  summary: 소모임 멤버별 기도제목 조회
+  description: |
+    - 소모임 멤버별 기도제목을 조회합니다.
+
+  parameters:
+    - $ref: "../../fms-token.yaml"
+    - in: path
+      name: cellGatheringMemberId
+      schema:
+        type: integer
+      required: true
+      description: 소모임 멤버 아이디
+
+  responses:
+    "200":
+      description: "성공"
+      content:
+        "application/json":
+          schema:
+            properties:
+              common:
+                $ref: "../../common-response.yaml"
+              data:
+                type: array
+                items:
+                  $ref: "#/definitions/cellGatheringMemberPrayer"
 post:
   tags:
     - Cell
@@ -46,3 +75,23 @@ post:
             properties:
               common:
                 $ref: "../../common-response.yaml"
+
+definitions:
+  cellGatheringMemberPrayer:
+    required:
+      - cellGatheringMemberPrayerId
+      - prayerRequest
+      - isAnswered
+    properties:
+      cellGatheringMemberPrayerId:
+        type: number
+        example: 578
+        description: 셀모임멤버기도제목 아이디
+      prayerRequest:
+        type: string
+        example: 하나님의 시선을 가지게 해주세요.
+        description: 기도제목
+      isAnswered:
+        type: boolean
+        example: true
+        description: 기도제목 응답 여부
