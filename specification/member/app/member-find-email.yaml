@@ -1,23 +1,25 @@
-post:
+get:
   tags:
     - Member
   summary: 이메일 찾기
   description: |
     이름과 생년월일로 이메일을 찾습니다.
 
-  requestBody:
-    content:
-      "application/json":
-        schema:
-          properties:
-            name:
-              type: string
-              example: "김창수"
-              description: 이름
-            birthday:
-              type: string
-              example: "1991-09-16"
-              description: 생년월일
+  parameters:
+    - in: query
+      name: memberName
+      schema:
+        type: string
+      required: true
+      example: 김창수
+      description: 멤버 이름
+    - in: query
+      name: birthday
+      schema:
+        type: string
+      required: true
+      example: "1991-09-16"
+      description: 생년월일
 
   responses:
     "200":
