@@ -15,7 +15,7 @@ get:
       name: month
       schema:
         type: number
-      required: true
+      required: false
       example: 7
       description: 월
     - in: query
