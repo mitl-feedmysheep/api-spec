@@ -15,16 +15,11 @@ post:
       application/json:
         schema:
           required:
-            - gatheringTitle
             - gatheringDate
             - startedAt
             - endedAt
             - gatheringPlace
           properties:
-            gatheringTitle:
-              type: string
-              example: farewell party
-              description: 소모임 제목
             gatheringDate:
               type: string
               example: "2023-12-31"
@@ -41,6 +36,10 @@ post:
               type: string
               example: 헤븐 무대 앞
               description: 소모임 장소
+            description:
+              type: string
+              example: 아웃팅했어요
+              description: 모임 특이사항
 
   responses:
     "200":
