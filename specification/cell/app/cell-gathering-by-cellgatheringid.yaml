@@ -51,10 +51,6 @@ put:
       application/json:
         schema:
           properties:
-            gatheringTitle:
-              type: string
-              example: farewell party
-              description: 소모임 제목
             gatheringDate:
               type: string
               example: "2023-12-31"
@@ -71,22 +67,10 @@ put:
               type: string
               example: 헤븐 무대 앞
               description: 소모임 장소
-            gatheringPhotoUrl:
-              type: string
-              example: "https://s3.intotheheaven.com"
-              description: 모임 사진
             description:
               type: string
               example: 설교가 팍팍 꽂히는 날이었어요
               description: 모임 설명
-            leaderComment:
-              type: string
-              example: 애들이 모임에 눈을 떴어요
-              description: 리더 코멘트
-            pastorComment:
-              type: string
-              example: 수고했습니다 사랑하고 축복해요^^
-              description: 목사 코멘트
 
   responses:
     "200":
